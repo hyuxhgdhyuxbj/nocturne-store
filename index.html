@@ -2,78 +2,36 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="松风生活方式商城原型" />
-    <title>松风商店 · Songfeng Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="theme-color" content="#321a28" />
+    <meta name="description" content="NOCTURNE 私密生活方式商城" />
+    <title>NOCTURNE · 私密生活方式商城</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./theme.css" />
+    <link rel="stylesheet" href="./mobile.css" />
   </head>
   <body>
-    <div class="announcement">私密发货 · 包装不显示商品信息 <span>了解隐私政策 →</span></div>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="返回首页">
-        <span class="brand-mark">松</span>
-        <span><strong>NOCTURNE</strong><small>私密生活方式商店</small></span>
-      </a>
-      <nav class="desktop-nav" aria-label="主导航">
-        <a href="#shop">探索全部</a>
-        <a href="#story">关于 NOCTURNE</a>
-        <button class="text-button" data-open-admin>店铺管理</button>
-      </nav>
-      <div class="header-actions">
-        <button class="icon-button" aria-label="搜索" data-search-toggle>⌕</button>
-        <button class="cart-button" data-open-cart><span>购物袋</span><b data-cart-count>0</b></button>
-      </div>
+    <div class="service-ticker">私密发货 · 包装不显示商品信息　|　客服微信 <button data-open-service>kjgbsh123321</button></div>
+    <header class="mobile-header">
+      <a class="mobile-brand" href="#top"><span class="brand-mark">N</span><span><strong>NOCTURNE</strong><small>PRIVATE STORE</small></span></a>
+      <div class="mobile-actions"><button class="header-icon" aria-label="搜索">⌕</button><button class="bag-button" data-open-cart>购物袋 <b data-cart-count>0</b></button></div>
     </header>
-
     <main id="top">
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">NOCTURNE / PRIVATE EDIT</p>
-          <h1>今晚，留一点<br /><em>只属于你的靠近。</em></h1>
-          <p class="hero-intro">给关系一点暗号，也给自己一点放松。我们挑选设计克制、触感细腻的私密好物，低调地送到你手中。</p>
-          <a href="#shop" class="primary-button">探索私密精选 <span>↗</span></a>
-        </div>
-        <div class="hero-art" role="img" aria-label="春日生活方式精选">
-          <div class="hero-note">PRIVATE<br /><strong>AFTER<br />DARK</strong></div>
-          <div class="hero-stamp">18+<br />ONLY</div>
-        </div>
-      </section>
-
-      <section class="ticker" aria-label="品牌理念">
-        <span>DISCREET DELIVERY</span><i>✳</i><span>亲密，不必张扬</span><i>✳</i><span>DESIGNED FOR DESIRE</span><i>✳</i><span>DISCREET DELIVERY</span>
-      </section>
-
-      <section class="shop-section" id="shop">
-        <div class="section-heading">
-          <div><p class="eyebrow">THE PRIVATE EDIT</p><h2>挑一件，<em>让夜晚有回应。</em></h2></div>
-          <p class="section-description">从一个人的放松，到两个人的默契。好设计应该让你自在，也让靠近这件事更自然。</p>
-        </div>
-        <div class="shop-toolbar">
-          <div class="category-tabs" role="tablist">
-            <button class="active" data-category="全部">全部</button><button data-category="情趣玩具">情趣玩具</button><button data-category="私密护理">私密护理</button><button data-category="内衣">内衣</button><button data-category="情侣礼盒">情侣礼盒</button>
-          </div>
-          <label class="sort-select">排序 <select data-sort><option value="featured">精选排序</option><option value="price-low">价格从低到高</option><option value="price-high">价格从高到低</option></select></label>
-        </div>
-        <div class="product-grid" data-product-grid></div>
-      </section>
-
-      <section class="story-section" id="story">
-        <div class="story-image"><span>YOUR<br />PRIVATE<br />RITUAL</span></div>
-        <div class="story-copy"><p class="eyebrow">OUR POINT OF VIEW</p><h2>亲密是一种<br /><em>温柔的自我表达。</em></h2><p>NOCTURNE 相信，探索欲不需要解释。我们关注材质、隐私和使用感，让每一件物品都自然地融入你的生活。</p><a href="#shop" class="outline-button">认识 NOCTURNE <span>↗</span></a></div>
-      </section>
-
-      <section class="newsletter"><p class="eyebrow">STAY IN THE LOOP</p><h2>给夜晚，<em>留一封信。</em></h2><p>订阅 NOCTURNE 通讯，收到新品、私密生活灵感和限定礼遇。</p><form data-newsletter-form><input type="email" placeholder="你的邮箱地址" aria-label="邮箱地址" required /><button class="primary-button" type="submit">订阅 <span>↗</span></button></form></section>
+      <section class="mobile-hero"><div><p class="eyebrow">NOCTURNE / 18+ PRIVATE STORE</p><h1>亲密，不必<br /><em>大声说出来。</em></h1><p>为独处、相爱和每一个想靠近的晚上，准备一些刚刚好的好物。</p><a class="hero-cta" href="#shop">进入私密精选 <span>↗</span></a></div><div class="hero-image"><span>AFTER<br />DARK</span><b>18+</b></div></section>
+      <section class="shop-shell" id="shop"><div class="shop-title-row"><div><p class="eyebrow">PRIVATE EDIT</p><h2>今晚想看什么？</h2></div><button class="manage-link" data-open-admin>店铺管理</button></div><div class="category-scroll" data-category-tabs></div><div class="subcategory-scroll" data-subcategory-tabs></div><div class="filter-row"><span data-product-count>0 件好物</span><label>排序 <select data-sort><option value="featured">精选</option><option value="price-low">价格低到高</option><option value="price-high">价格高到低</option></select></label></div><div class="product-grid" data-product-grid></div></section>
+      <section class="trust-strip"><div><strong>私密包装</strong><span>外箱不显示商品</span></div><div><strong>客服答疑</strong><span>微信一对一沟通</span></div><div><strong>18+ 专属</strong><span>尊重每一种选择</span></div></section>
+      <section class="brand-note"><p class="eyebrow">A LITTLE CLOSER</p><h2>让喜欢这件事，<em>自然一点。</em></h2><p>NOCTURNE 只挑选触感、设计和隐私都值得信赖的私密好物。浏览、咨询和购买，都可以从一句“想了解一下”开始。</p><button class="outline-button" data-open-service>添加客服微信 <span>↗</span></button></section>
     </main>
-
-    <footer class="site-footer"><span>© 2026 NOCTURNE STUDIO</span><span>杭州 · 中国 · 仅限成年人</span><span>小红书　 Instagram　 联系我们</span></footer>
-
+    <footer class="mobile-footer"><span>© 2026 NOCTURNE</span><span>仅限成年人浏览</span><span>客服微信 kjgbsh123321</span></footer>
+    <button class="service-float" data-open-service><span>♡</span><small>联系客服</small></button>
     <div class="modal-backdrop" data-modal-backdrop hidden>
-      <aside class="drawer" data-cart-drawer hidden><div class="drawer-head"><h2>购物袋 <span data-cart-count>0</span></h2><button class="close-button" data-close-drawer>×</button></div><div class="cart-items" data-cart-items></div><div class="cart-total"><span>合计</span><strong data-cart-total>¥0</strong></div><button class="primary-button full-width" data-checkout>去结算 <span>↗</span></button></aside>
-      <aside class="drawer admin-drawer" data-admin-drawer hidden><div class="drawer-head"><div><p class="eyebrow">STORE ADMIN</p><h2>店铺管理</h2></div><button class="close-button" data-close-drawer>×</button></div><p class="admin-intro">上传图片或视频，填写商品信息，商品会立即出现在你的商城首页。数据保存在当前浏览器中。</p><form class="product-form" data-product-form><label>商品名称<input name="name" placeholder="例如：夜色静音玩具" required /></label><div class="form-row"><label>价格<input name="price" type="number" min="0" placeholder="299" required /></label><label>分类<select name="category"><option>情趣玩具</option><option>私密护理</option><option>内衣</option><option>情侣礼盒</option></select></label></div><label>商品描述<textarea name="description" rows="3" placeholder="一句话描述材质、触感或适合的使用场景"></textarea></label><label class="upload-box"><input name="media" type="file" accept="image/*,video/*" required /><span class="upload-icon">＋</span><strong>上传商品图片 / 视频</strong><small>支持 JPG、PNG、WEBP、MP4 · 建议图片小于 2MB</small></label><button class="primary-button full-width" type="submit">发布商品 <span>↗</span></button></form><div class="admin-list"><div class="list-heading"><h3>已发布商品</h3><button class="text-button" data-reset-products>恢复示例商品</button></div><div data-admin-list></div></div></aside>
+      <section class="bottom-sheet" data-cart-sheet hidden><div class="sheet-head"><h2>购物袋 <span data-cart-count>0</span></h2><button class="close-button" data-close-modal>×</button></div><div class="cart-items" data-cart-items></div><div class="cart-total"><span>合计</span><strong data-cart-total>¥0</strong></div><button class="full-button" data-checkout>联系客服购买 <span>↗</span></button></section>
+      <section class="bottom-sheet service-sheet" data-service-sheet hidden><div class="sheet-head"><div><p class="eyebrow">PRIVATE SERVICE</p><h2>联系客服</h2></div><button class="close-button" data-close-modal>×</button></div><p class="service-big">kjgbsh123321</p><p class="sheet-muted">添加微信后，把商品名称或截图发给客服即可咨询。支付和购买请通过客服完成。</p><button class="full-button" data-copy-wechat>复制客服微信</button></section>
+      <section class="bottom-sheet product-sheet" data-product-sheet hidden><div class="sheet-head"><div><p class="eyebrow">PRODUCT DETAILS</p><h2 data-detail-name>商品详情</h2></div><button class="close-button" data-close-modal>×</button></div><div class="detail-media" data-detail-media></div><div class="detail-price" data-detail-price></div><p class="sheet-muted" data-detail-description></p><div class="detail-specs" data-detail-specs></div><button class="full-button" data-detail-contact>联系客服购买 <span>↗</span></button></section>
+      <section class="bottom-sheet admin-sheet" data-admin-sheet hidden><div class="sheet-head"><div><p class="eyebrow">LOCAL STORE ADMIN</p><h2>店铺管理</h2></div><button class="close-button" data-close-modal>×</button></div><div data-admin-login-panel><p class="sheet-muted">请输入店铺账号和密码。当前为本地演示登录，数据只保存在这台设备的浏览器中。</p><form class="admin-form" data-admin-login><label>账号<input name="account" autocomplete="username" required /></label><label>密码<input name="password" type="password" autocomplete="current-password" required /></label><button class="full-button" type="submit">登录管理后台</button><p class="login-error" data-login-error></p></form></div><div data-admin-panel hidden><div class="admin-tabs"><button class="active" data-admin-tab="products">商品管理</button><button data-admin-tab="categories">分类管理</button><button class="logout-button" data-admin-logout>退出</button></div><div data-admin-products-panel><form class="admin-form" data-product-form><label>商品名称<input name="name" placeholder="例如：夜色静音玩具" required /></label><div class="form-grid"><label>价格<input name="price" type="number" min="0" placeholder="299" required /></label><label>分类<select name="category" data-product-category></select></label></div><label>小分类<select name="subcategory" data-product-subcategory></select></label><label>产品参数<textarea name="specs" rows="3" placeholder="材质：亲肤硅胶\n尺寸：约 12cm\n颜色：酒红"></textarea></label><label>商品介绍<textarea name="description" rows="3" placeholder="一句话描述触感、使用场景或礼盒内容"></textarea></label><label class="upload-box"><input name="media" type="file" accept="image/*,video/*" required /><span class="upload-icon">＋</span><strong>上传图片 / 视频</strong><small>图片建议小于 2MB；视频建议小于 8MB</small></label><button class="full-button" type="submit">发布商品 <span>↗</span></button></form><div class="admin-list"><div class="list-heading"><h3>已发布商品</h3><button class="text-button" data-reset-products>恢复示例商品</button></div><div data-admin-list></div></div></div><div data-admin-categories-panel hidden><form class="admin-form" data-category-form><label>大分类名称<input name="name" placeholder="例如：男士专区" required /></label><label>小分类（用顿号或逗号分隔）<input name="subcategories" placeholder="自慰器、飞机杯、护理" /></label><button class="full-button" type="submit">添加分类</button></form><div class="admin-list" data-category-list></div></div></div></section>
     </div>
     <div class="toast" data-toast></div>
     <script src="./app.js"></script>
