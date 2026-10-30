@@ -5,10 +5,11 @@ const crypto = require('crypto');
 const { exec } = require('child_process');
 
 const ROOT = __dirname;
-const DATA_DIR = path.join(ROOT, 'manager-data');
+const DATA_DIR = path.resolve(process.env.NOCTURNE_DATA_DIR || path.join(ROOT, 'manager-data'));
 const MEDIA_DIR = path.join(DATA_DIR, 'media');
 const PUBLISH_DIR = path.join(DATA_DIR, 'publish');
-const PORT = 4310;
+const BACKUP_DIR = path.join(DATA_DIR, 'backups');
+const PORT = Number(process.env.NOCTURNE_PORT || 4310);
 const SERVICE_WECHAT = 'kjgbsh123321';
 
 const defaults = {
@@ -24,10 +25,10 @@ const defaults = {
 };
 
 function ensureDirs() {
-  for (const dir of [DATA_DIR, MEDIA_DIR, PUBLISH_DIR]) fs.mkdirSync(dir, { recursive: true });
+  for (const dir of [DATA_DIR, MEDIA_DIR, PUBLISH_DIR, BACKUP_DIR]) fs.mkdirSync(dir, { recursive: true });
   if (!fs.existsSync(path.join(DATA_DIR, 'catalog.json'))) writeJson(path.join(DATA_DIR, 'catalog.json'), defaults);
 }
-function writeJson(file, value) { fs.writeFileSync(file, JSON.stringify(value, null, 2), 'utf8'); }
+function writeJson(file, value) { const temp = `${file}.tmp-${process.pid}-${Date.now()}`; fs.writeFileSync(temp, JSON.stringify(value, null, 2), 'utf8'); fs.renameSync(temp, file); }
 function readCatalog() { ensureDirs(); return JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'catalog.json'), 'utf8')); }
 function saveCatalog(catalog) { ensureDirs(); writeJson(path.join(DATA_DIR, 'catalog.json'), catalog); }
 function safePath(value) { return String(value || '').replace(/\\/g, '/').replace(/^\/+/, '').split('/').filter(part => part && part !== '.' && part !== '..').join('/'); }
@@ -41,15 +42,24 @@ function copyTree(source, target) {
   }
 }
 function cleanDir(dir) { if (!fs.existsSync(dir)) return; for (const entry of fs.readdirSync(dir)) { const file = path.join(dir, entry); fs.rmSync(file, { recursive: true, force: true }); } }
+function listFiles(dir, prefix = '') { if (!fs.existsSync(dir)) return []; return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => { const relative = prefix ? `${prefix}/${entry.name}` : entry.name; return entry.isDirectory() ? listFiles(path.join(dir, entry.name), relative) : [relative.replace(/\\/g, '/')]; }); }
+function mediaReference(value) { const clean = safePath(value); const marker = clean.indexOf('media/'); return marker >= 0 ? clean.slice(marker + 'media/'.length) : ''; }
+function referencedMedia(catalog) { const references = new Set(); for (const product of catalog.products || []) for (const media of product.media || []) { const ref = mediaReference(media.path); if (ref) references.add(ref); } for (const cover of catalog.covers || []) { const ref = mediaReference(cover.path); if (ref) references.add(ref); } return references; }
+function cleanUnusedMedia(catalog) { const used = referencedMedia(catalog); for (const relative of listFiles(MEDIA_DIR)) if (!used.has(relative)) fs.rmSync(path.join(MEDIA_DIR, relative), { force: true }); return used.size; }
+function backupCurrentPublish(catalog) { if (!fs.existsSync(PUBLISH_DIR) || !listFiles(PUBLISH_DIR).length) return null; const stamp = `${new Date().toISOString().replace(/[-:TZ.]/g, '').slice(0, 14)}-${Date.now().toString().slice(-4)}`; const target = path.join(BACKUP_DIR, stamp); copyTree(PUBLISH_DIR, target); writeJson(path.join(target, 'backup-info.json'), { createdAt: new Date().toISOString(), products: catalog.products?.length || 0 }); const backups = fs.readdirSync(BACKUP_DIR, { withFileTypes: true }).filter(entry => entry.isDirectory()).map(entry => entry.name).sort().reverse(); for (const old of backups.slice(5)) fs.rmSync(path.join(BACKUP_DIR, old), { recursive: true, force: true }); return target; }
 function exportStatic() {
   const catalog = readCatalog();
+  const backup = backupCurrentPublish(catalog);
+  const usedMedia = cleanUnusedMedia(catalog);
   cleanDir(PUBLISH_DIR);
   fs.mkdirSync(PUBLISH_DIR, { recursive: true });
   const source = path.join(ROOT, 'static-template');
   copyTree(source, PUBLISH_DIR);
   copyTree(MEDIA_DIR, path.join(PUBLISH_DIR, 'media'));
   writeJson(path.join(PUBLISH_DIR, 'catalog.json'), catalog);
-  return { path: PUBLISH_DIR, products: catalog.products.length, media: countFiles(MEDIA_DIR) };
+  const exportInfo = { generatedAt: new Date().toISOString(), products: catalog.products.length, media: usedMedia, backupCreated: Boolean(backup) };
+  writeJson(path.join(PUBLISH_DIR, 'export-info.json'), exportInfo);
+  return { path: PUBLISH_DIR, ...exportInfo };
 }
 function countFiles(dir) { if (!fs.existsSync(dir)) return 0; return fs.readdirSync(dir, { withFileTypes: true }).reduce((sum, entry) => sum + (entry.isDirectory() ? countFiles(path.join(dir, entry.name)) : 1), 0); }
 function serveFile(res, file) {
