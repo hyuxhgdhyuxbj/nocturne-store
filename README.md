@@ -1,6 +1,6 @@
-# 松风生活方式商城
+# NOCTURNE 私密生活方式商城
 
-这是一个不需要后端也能直接运行的商城原型。适合先用来确认品牌视觉、商品结构和上传流程。
+这是一个不需要后端也能直接运行的成人用品商城原型。视觉采用克制、暧昧的私密风格，适合先确认品牌视觉、商品分类和上传流程。
 
 ## 本地预览
 
@@ -15,7 +15,7 @@
 
 ## 发布到 GitHub Pages
 
-1. 在 GitHub 新建一个公开仓库，例如 `songfeng-store`，不要勾选初始化 README。
+1. 在 GitHub 新建一个公开仓库，例如 `nocturne-store`，不要勾选初始化 README。
 2. 在本文件夹打开 PowerShell，执行：
 
 ```powershell
@@ -23,13 +23,13 @@ git init
 git add .
 git commit -m "Create Songfeng storefront"
 git branch -M main
-git remote add origin https://github.com/你的用户名/songfeng-store.git
+git remote add origin https://github.com/你的用户名/nocturne-store.git
 git push -u origin main
 ```
 
 3. 打开 GitHub 仓库的 **Settings → Pages**。
 4. 在 **Build and deployment** 选择 **Deploy from a branch**，分支选择 `main`，目录选择 `/ (root)`，保存。
-5. 等待约 1 分钟，GitHub 会给你一个 `https://你的用户名.github.io/songfeng-store/` 的网站地址。
+5. 等待约 1 分钟，GitHub 会给你一个 `https://你的用户名.github.io/nocturne-store/` 的网站地址。
 
 ## 下一步接入真实商城
 
