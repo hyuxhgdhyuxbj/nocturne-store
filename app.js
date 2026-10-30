@@ -16,6 +16,12 @@ const sampleProducts = [
   { id: 'gift', name: '两个人的夜晚礼盒', price: 599, category: '情侣礼盒', subcategory: '纪念日礼盒', description: '为纪念日、周末和想靠近的时刻准备。', specs: '内容：精选好物 3 件\n包装：隐私礼盒\n适合：情侣', media: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=85', type: 'image', badge: '礼盒' }
 ];
 const state = { products: load('nocturne-products', sampleProducts), categories: load('nocturne-categories', defaultCategories), cart: load('nocturne-cart', []), category: '全部', subcategory: '全部', sort: 'featured' };
+const heroSlides = [
+  { image: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1100&q=85', label: 'AFTER<br>DARK', note: '静谧的夜晚，也可以有一点期待。' },
+  { image: 'https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1100&q=85', label: 'PRIVATE<br>RITUAL', note: '给自己留一段不被打扰的时间。' },
+  { image: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=1100&q=85', label: 'TWO<br>OF US', note: '让靠近这件事，自然发生。' }
+];
+let heroIndex = 0;
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const money = value => `¥${Number(value || 0).toLocaleString('zh-CN')}`;
@@ -30,6 +36,12 @@ function renderCategories() {
   $$('[data-category]').forEach(btn => btn.addEventListener('click', () => { state.category = btn.dataset.category; state.subcategory = '全部'; renderCategories(); renderProducts(); }));
   $$('[data-subcategory]').forEach(btn => btn.addEventListener('click', () => { state.subcategory = btn.dataset.subcategory; renderCategories(); renderProducts(); }));
 }
+function renderHero() {
+  $('[data-hero-slides]').innerHTML = heroSlides.map((slide, i) => `<div class="hero-slide ${i === heroIndex ? 'active' : ''}" style="background-image:linear-gradient(130deg,rgba(65,29,43,.1),rgba(65,29,43,.3)),url('${slide.image}')"><span>${slide.label}</span><small>${slide.note}</small><b>18+</b></div>`).join('');
+  $('[data-hero-dots]').innerHTML = heroSlides.map((_, i) => `<button class="${i === heroIndex ? 'active' : ''}" data-hero-dot="${i}" aria-label="第 ${i + 1} 张"></button>`).join('');
+  $$('[data-hero-dot]').forEach(dot => dot.addEventListener('click', () => { heroIndex = Number(dot.dataset.heroDot); renderHero(); }));
+}
+function nextHero(step = 1) { heroIndex = (heroIndex + step + heroSlides.length) % heroSlides.length; renderHero(); }
 function renderProducts() {
   let products = state.products.filter(p => (state.category === '全部' || p.category === state.category) && (state.subcategory === '全部' || p.subcategory === state.subcategory));
   if (state.sort === 'price-low') products.sort((a,b) => a.price - b.price);
@@ -63,5 +75,8 @@ $('[data-product-category]').addEventListener('change', updateSubcategoryOptions
 $('[data-reset-products]').addEventListener('click', () => { state.products = sampleProducts; save('nocturne-products', state.products); renderCategories(); renderProducts(); renderAdmin(); showToast('示例商品已恢复'); });
 $('[data-product-form]').addEventListener('submit', e => { e.preventDefault(); const form = e.currentTarget; const file = form.media.files[0]; if (!file) return; const reader = new FileReader(); reader.onload = () => { const product = { id: `custom-${Date.now()}`, name: form.name.value.trim(), price: Number(form.price.value), category: form.category.value, subcategory: form.subcategory.value, specs: form.specs.value.trim(), description: form.description.value.trim(), media: reader.result, type: file.type.startsWith('video') ? 'video' : 'image', badge: 'NEW' }; state.products.unshift(product); save('nocturne-products', state.products); form.reset(); updateSubcategoryOptions(); renderProducts(); renderAdmin(); showToast('商品已发布'); }; reader.readAsDataURL(file); });
 $('[data-category-form]').addEventListener('submit', e => { e.preventDefault(); const form = e.currentTarget; const name = form.name.value.trim(); if (!name || state.categories.some(c => c.name === name)) return showToast('分类名称不能为空或已存在'); const subs = form.subcategories.value.split(/[、,，]/).map(s => s.trim()).filter(Boolean); state.categories.push({ name, subs: ['全部', ...subs] }); save('nocturne-categories', state.categories); form.reset(); renderCategories(); renderAdmin(); showToast('分类已添加'); });
-renderCategories(); renderProducts(); renderCart();
+$$('[data-hero-prev]').forEach(button => button.addEventListener('click', () => nextHero(-1)));
+$$('[data-hero-next]').forEach(button => button.addEventListener('click', () => nextHero(1)));
+renderHero(); renderCategories(); renderProducts(); renderCart();
+setInterval(() => nextHero(1), 5000);
 if (sessionStorage.getItem('nocturne-admin') === '1') { $('[data-admin-login-panel]').hidden = true; $('[data-admin-panel]').hidden = false; }
