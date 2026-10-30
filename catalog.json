@@ -1,0 +1,353 @@
+{
+  "version": 1,
+  "settings": {
+    "storeName": "NOCTURNE",
+    "serviceWechat": "kjgbsh123321"
+  },
+  "categories": [
+    {
+      "id": "cat-1793384514911-ink6d8",
+      "name": "男性用品",
+      "subs": []
+    },
+    {
+      "id": "cat-1793384525198-iwpmop",
+      "name": "女性用品",
+      "subs": []
+    },
+    {
+      "id": "cat-1793384532423-mayub3",
+      "name": "性感内衣",
+      "subs": []
+    },
+    {
+      "id": "cat-1793384585975-6wv4uc",
+      "name": "夹吸女优",
+      "subs": []
+    },
+    {
+      "id": "cat-1793384595167-39a2ik",
+      "name": "情趣跳蛋",
+      "subs": []
+    },
+    {
+      "id": "cat-1793384602439-aqbyvi",
+      "name": "飞机杯",
+      "subs": []
+    },
+    {
+      "id": "cat-1793384608334-92mzfn",
+      "name": "双人SM",
+      "subs": []
+    },
+    {
+      "id": "cat-1793384619014-n321hd",
+      "name": "润滑守护",
+      "subs": []
+    },
+    {
+      "id": "cat-1793384630839-j2rdm0",
+      "name": "仿真阳具",
+      "subs": []
+    },
+    {
+      "id": "cat-1793384640551-dfwsww",
+      "name": "增强延时",
+      "subs": []
+    }
+  ],
+  "products": [
+    {
+      "name": "欢亲全身实体充气硅胶娃娃男性真人倒模自慰器成人性用品可插人",
+      "price": 235,
+      "categoryId": "cat-1793384514911-ink6d8",
+      "subcategoryId": "",
+      "description": "",
+      "media": [
+        {
+          "path": "/media/products/1793386495984-39069542-78db-46e4-94ac-ca0db7ab4b14-微信图片_2026-10-31_025146_792.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025146_792.jpg"
+        },
+        {
+          "path": "/media/products/1793386495987-d064bb86-1bb1-4799-96f5-218ac915bff0-微信图片_2026-10-31_025159_800.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025159_800.jpg"
+        },
+        {
+          "path": "/media/products/1793386495981-7c8beffc-2c92-458e-a6a1-3f0438ba6e12-微信图片_2026-10-31_025204_736.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025204_736.jpg"
+        },
+        {
+          "path": "/media/products/1793386496031-3cd9aca5-23d7-4011-94b9-87002db19c1c-微信图片_2026-10-31_025207_673.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025207_673.jpg"
+        },
+        {
+          "path": "/media/products/1793386495993-45ad7a1d-afec-4f81-9854-27b5f9a03bca-微信图片_2026-10-31_025210_688.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025210_688.jpg"
+        },
+        {
+          "path": "/media/products/1793386495995-3efe5174-310e-4a26-8aef-92f2ec1863af-微信图片_2026-10-31_025241_121.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025241_121.jpg"
+        },
+        {
+          "path": "/media/products/1793386496033-904d974b-a2da-4105-b654-48d951bac044-微信图片_2026-10-31_025245_864.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025245_864.jpg"
+        },
+        {
+          "path": "/media/products/1793386496004-7aa26f89-bbdb-4d74-a26a-f4d075cd7da9-微信图片_2026-10-31_025249_577.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025249_577.jpg"
+        },
+        {
+          "path": "/media/products/1793386496035-d7977127-6b43-45bb-bab9-83df08b2f5fa-微信图片_2026-10-31_025252_832.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025252_832.jpg"
+        },
+        {
+          "path": "/media/products/1793386496040-b3b69b82-5124-4625-bba0-8fc3d072cb36-微信图片_2026-10-31_025256_240.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025256_240.jpg"
+        },
+        {
+          "path": "/media/products/1793386496009-c000f9a8-a183-4e24-a3e6-4f8c272e8218-微信图片_2026-10-31_025300_048.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025300_048.jpg"
+        },
+        {
+          "path": "/media/products/1793386496012-30c1c998-932d-4472-a4d2-972a58c3e069-微信图片_2026-10-31_025303_416.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025303_416.jpg"
+        },
+        {
+          "path": "/media/products/1793386496015-6c7c3cc7-2d71-4ea6-b68e-f982b484a7ec-微信图片_2026-10-31_025306_864.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025306_864.jpg"
+        },
+        {
+          "path": "/media/products/1793386496018-8f24aa48-2700-4896-b348-358827680c29-微信图片_2026-10-31_025310_273.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025310_273.jpg"
+        },
+        {
+          "path": "/media/products/1793386496021-23ab2d4f-5ea0-42bc-8f98-e387a9e4ee15-微信图片_2026-10-31_025313_552.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025313_552.jpg"
+        },
+        {
+          "path": "/media/products/1793386496025-e2f1fe40-5303-4754-b756-e878a4a0a99f-微信图片_2026-10-31_025317_000.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025317_000.jpg"
+        },
+        {
+          "path": "/media/products/1793386496028-83949b87-bb14-40e7-977a-88ed2f6d442f-微信图片_2026-10-31_025320_465.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_025320_465.jpg"
+        }
+      ],
+      "specs": [
+        {
+          "label": "保修期",
+          "value": "通用"
+        },
+        {
+          "label": "颜色",
+          "value": "肤色"
+        },
+        {
+          "label": "控制类型",
+          "value": "无线遥控款"
+        },
+        {
+          "label": "适用人群",
+          "value": "成年"
+        }
+      ],
+      "variants": [],
+      "badge": "NEW",
+      "id": "product-1793386584754-bsedfl"
+    },
+    {
+      "name": "布吉岛半身实体娃娃带头 现款9KG半身实体娃娃成人用品情趣倒模",
+      "price": 642,
+      "categoryId": "cat-1793384514911-ink6d8",
+      "subcategoryId": "",
+      "description": "",
+      "media": [
+        {
+          "path": "/media/products/1793386178624-9d3d6759-cd72-498a-8ffc-68362f2e5a19-微信图片_2026-10-31_024725_496.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_024725_496.jpg"
+        },
+        {
+          "path": "/media/products/1793386178618-b131f82e-456c-4ce1-b037-9cee34af99b4-微信图片_2026-10-31_024733_041.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_024733_041.jpg"
+        },
+        {
+          "path": "/media/products/1793386178628-7432251e-a630-44ce-bb46-d8ca09b35893-微信图片_2026-10-31_024737_144.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_024737_144.jpg"
+        },
+        {
+          "path": "/media/products/1793386178626-9306470c-64b1-4a3b-a135-3adac81d9292-微信图片_2026-10-31_024740_720.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_024740_720.jpg"
+        },
+        {
+          "path": "/media/products/1793386178630-48c95cf0-a452-4c4e-990f-ef1e6d7d3a94-微信图片_2026-10-31_024744_192.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_024744_192.jpg"
+        }
+      ],
+      "specs": [],
+      "variants": [],
+      "badge": "NEW",
+      "id": "product-1793386182553-nusyp5"
+    },
+    {
+      "name": "实体娃娃TPE金属骨架半身带头带脚成人用品男用自慰器",
+      "price": 210,
+      "categoryId": "cat-1793384514911-ink6d8",
+      "subcategoryId": "",
+      "description": "",
+      "media": [
+        {
+          "path": "/media/products/1793385859115-7636d744-0089-47d2-9d77-00bf780e5e52-微信图片_2026-10-31_024014_976.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_024014_976.jpg"
+        },
+        {
+          "path": "/media/products/1793385859083-0f369fcd-7770-4148-9085-8597a38af9b2-微信图片_2026-10-31_024021_600.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_024021_600.jpg"
+        },
+        {
+          "path": "/media/products/1793385859123-a731c4aa-2b20-48c8-8e2e-c9621d159e65-微信图片_2026-10-31_024025_985.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_024025_985.jpg"
+        },
+        {
+          "path": "/media/products/1793385859107-e8390f77-d5d8-4a2c-bbaf-550609d1431e-微信图片_2026-10-31_024029_856.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_024029_856.jpg"
+        },
+        {
+          "path": "/media/products/1793385859125-f4956a96-7078-4435-a41f-3f3dfe3282ec-微信图片_2026-10-31_024033_960.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_024033_960.jpg"
+        },
+        {
+          "path": "/media/products/1793385859111-c92388aa-7af2-4760-b697-5de651b6f47b-微信图片_2026-10-31_024046_824.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_024046_824.jpg"
+        },
+        {
+          "path": "/media/products/1793385859129-a1304daf-8fab-4ce4-98bf-447235980c0b-微信图片_2026-10-31_024051_895.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_024051_895.jpg"
+        },
+        {
+          "path": "/media/products/1793385859119-cf5dfa72-057f-476b-bca7-8a497e6a7ad3-微信图片_2026-10-31_024055_281.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_024055_281.jpg"
+        }
+      ],
+      "specs": [],
+      "variants": [],
+      "badge": "NEW",
+      "id": "product-1793385863569-5nkg65"
+    },
+    {
+      "name": "牧远上古洪荒成人用品名器带头半身人大屁股倒模飞机杯男用自慰器",
+      "price": 455,
+      "categoryId": "cat-1793384514911-ink6d8",
+      "subcategoryId": "",
+      "description": "",
+      "media": [
+        {
+          "path": "/media/products/1793385250016-9c0bb377-d11e-4d0b-b92f-6a31cec86093-微信图片_2026-10-31_022521_647.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_022521_647.jpg"
+        },
+        {
+          "path": "/media/products/1793385250052-504ee163-dd52-4099-bcf3-350600cd6431-微信图片_2026-10-31_022536_599.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_022536_599.jpg"
+        },
+        {
+          "path": "/media/products/1793385250046-cd0e9183-2dbf-4352-b079-55b364c93d64-微信图片_2026-10-31_022543_191.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_022543_191.jpg"
+        },
+        {
+          "path": "/media/products/1793385250049-6c621d7d-0089-4d0c-8d34-cb79e3711242-微信图片_2026-10-31_022548_127.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_022548_127.jpg"
+        },
+        {
+          "path": "/media/products/1793385250061-81d3a6cf-e624-43b6-8cda-f2960ebf1c4d-微信图片_2026-10-31_022556_182.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_022556_182.jpg"
+        },
+        {
+          "path": "/media/products/1793385250071-dff29d2c-9c60-47eb-a19c-d02cf81a3a0b-微信图片_2026-10-31_022603_431.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_022603_431.jpg"
+        },
+        {
+          "path": "/media/products/1793385250067-80f8c980-24bf-47ab-8d77-790a3b88f7b7-微信图片_2026-10-31_022609_079.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_022609_079.jpg"
+        },
+        {
+          "path": "/media/products/1793385250079-6697e35c-b3f6-444f-a4a3-a6eb5b936680-微信图片_2026-10-31_022613_127.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_022613_127.jpg"
+        },
+        {
+          "path": "/media/products/1793385250064-59b7dcd2-1ef1-4152-9f09-3ee5be959e93-微信图片_2026-10-31_022617_039.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_022617_039.jpg"
+        },
+        {
+          "path": "/media/products/1793385250082-ff48160e-61c7-4d3c-9be9-e3d481d0c185-微信图片_2026-10-31_022620_687.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_022620_687.jpg"
+        },
+        {
+          "path": "/media/products/1793385250074-b9bb29cd-526a-448c-a2f8-af689cbc0f09-微信图片_2026-10-31_022623_855.jpg",
+          "type": "image/jpeg",
+          "name": "微信图片_2026-10-31_022623_855.jpg"
+        }
+      ],
+      "specs": [
+        {
+          "label": "保修期",
+          "value": "通用"
+        },
+        {
+          "label": "颜色",
+          "value": "红色 肤色"
+        },
+        {
+          "label": "控制类型",
+          "value": "带骨架"
+        },
+        {
+          "label": "适用人群",
+          "value": "成年"
+        }
+      ],
+      "variants": [],
+      "badge": "NEW",
+      "id": "product-1793385258304-kx927q"
+    }
+  ],
+  "covers": []
+}

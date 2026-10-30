@@ -9,6 +9,7 @@ const DATA_DIR = path.resolve(process.env.NOCTURNE_DATA_DIR || path.join(ROOT, '
 const MEDIA_DIR = path.join(DATA_DIR, 'media');
 const PUBLISH_DIR = path.join(DATA_DIR, 'publish');
 const BACKUP_DIR = path.join(DATA_DIR, 'backups');
+const DESKTOP_PUBLISH_DIR = path.join(process.env.USERPROFILE || require('os').homedir(), 'Desktop', 'NOCTURNE-publish');
 const PORT = Number(process.env.NOCTURNE_PORT || 4310);
 const SERVICE_WECHAT = 'kjgbsh123321';
 
@@ -59,7 +60,9 @@ function exportStatic() {
   writeJson(path.join(PUBLISH_DIR, 'catalog.json'), catalog);
   const exportInfo = { generatedAt: new Date().toISOString(), products: catalog.products.length, media: usedMedia, backupCreated: Boolean(backup) };
   writeJson(path.join(PUBLISH_DIR, 'export-info.json'), exportInfo);
-  return { path: PUBLISH_DIR, ...exportInfo };
+  cleanDir(DESKTOP_PUBLISH_DIR);
+  copyTree(PUBLISH_DIR, DESKTOP_PUBLISH_DIR);
+  return { path: PUBLISH_DIR, desktopPath: DESKTOP_PUBLISH_DIR, ...exportInfo };
 }
 function countFiles(dir) { if (!fs.existsSync(dir)) return 0; return fs.readdirSync(dir, { withFileTypes: true }).reduce((sum, entry) => sum + (entry.isDirectory() ? countFiles(path.join(dir, entry.name)) : 1), 0); }
 function serveFile(res, file) {
