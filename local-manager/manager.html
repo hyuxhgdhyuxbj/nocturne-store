@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="manager-extra.css" />
 </head>
 <body>
-  <header class="topbar"><div><span class="mark">N</span><div><strong>NOCTURNE 店铺管理器</strong><small>本地保存 · 不依赖云端</small></div></div><div class="top-actions"><button data-save>保存资料</button><button data-export>导出静态站</button><button class="primary" data-preview>保存并预览</button></div></header>
+  <header class="topbar"><div><span class="mark">N</span><div><strong>NOCTURNE 店铺管理器</strong><small>本地保存 · 不依赖云端</small></div></div><div class="top-actions"><button type="button" data-save>保存资料</button><button type="button" data-export>导出静态站</button><button type="button" class="primary" data-preview>保存并预览</button></div></header>
   <main class="layout">
-    <aside class="sidebar"><div class="side-heading"><h2>商品目录</h2><button data-new-product>＋ 新商品</button></div><input class="search" data-search placeholder="搜索商品名称" /><div data-product-list class="product-list"></div></aside>
+    <aside class="sidebar"><div class="side-heading"><h2>商品目录</h2><button type="button" class="new-product-button" data-new-product>＋ 新商品</button></div><input class="search" data-search placeholder="搜索商品名称" /><div data-product-list class="product-list"></div></aside>
     <section class="editor"><div class="editor-head"><div><p class="eyebrow">PRODUCT EDITOR</p><h1 data-editor-title>新建商品</h1></div><button class="danger ghost" data-delete-product hidden>删除商品</button></div>
       <form data-product-form>
         <div class="panel"><h3>基本信息</h3><div class="grid two"><label>商品名称<input name="name" required placeholder="例如：夜色静音玩具" /></label><label>价格<input name="price" required type="number" min="0" step="0.01" placeholder="299" /></label></div><div class="grid two"><label>大分类<select name="category" data-category-select></select></label><label>小分类<select name="subcategory" data-subcategory-select></select></label></div><label>商品介绍<textarea name="description" rows="4" placeholder="告诉顾客这件商品的特点、适合谁、使用场景"></textarea></label></div>
