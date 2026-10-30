@@ -1,0 +1,36 @@
+/* Final layout pass: keep the storefront usable on phones and desktops. */
+html, body { overflow-x: hidden; }
+.form-hint { margin: -4px 0 0; color: #a0878d; font-size: 10px; line-height: 1.6; }
+.category-editor { border-bottom: 1px solid #eee0dd; padding: 14px 0; }
+.category-editor-head, .subcategory-editor, .subcategory-add-row { display: flex; align-items: center; gap: 8px; }
+.category-editor-head input, .subcategory-editor input, .subcategory-add-row input { min-width: 0; flex: 1; border: 1px solid #e5d5d2; background: #fffaf7; padding: 8px 9px; color: #351c27; font: inherit; font-size: 12px; }
+.category-editor-head input { font-weight: 600; }
+.editor-actions { display: flex; gap: 8px; flex: none; }
+.subcategory-editor-list { display: grid; gap: 7px; margin: 9px 0 9px 14px; }
+.subcategory-editor { min-width: 0; }
+.subcategory-add-row { margin-left: 14px; }
+.subcategory-add-row input { font-size: 11px; }
+.text-button, .admin-delete { white-space: nowrap; }
+.admin-tabs { overflow-x: auto; scrollbar-width: none; padding-bottom: 1px; }
+.admin-tabs::-webkit-scrollbar { display: none; }
+@media (min-width: 801px) {
+  body { max-width: none; margin: 0; box-shadow: none; }
+  .mobile-header { max-width: none; padding: 0 clamp(24px, 5vw, 80px); }
+  .mobile-hero, .shop-shell, .trust-strip, .brand-note, .mobile-footer { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+  .mobile-hero { display: grid; grid-template-columns: minmax(280px, .8fr) minmax(480px, 1.2fr); gap: clamp(36px, 7vw, 110px); align-items: center; padding: 70px 0 58px; }
+  .mobile-hero > div:first-child { max-width: 440px; }
+  .mobile-hero h1 { font-size: clamp(48px, 5vw, 76px); }
+  .shop-shell { padding: 64px 0 80px; }
+  .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 20px; }
+  .hero-carousel { height: min(42vw, 460px); min-height: 300px; }
+  .trust-strip { border-inline: 1px solid #e8d8d5; }
+  .bottom-sheet { left: 50%; right: auto; width: min(620px, calc(100% - 40px)); transform: translateX(-50%); border-radius: 18px 18px 0 0; }
+  .admin-sheet { max-height: 88vh; }
+}
+@media (max-width: 420px) {
+  .admin-sheet { padding-inline: 14px; }
+  .admin-tabs { gap: 14px; }
+  .admin-tabs button { font-size: 11px; }
+  .category-editor-head, .subcategory-editor, .subcategory-add-row { gap: 5px; }
+  .category-editor-head input, .subcategory-editor input, .subcategory-add-row input { padding-inline: 7px; }
+}
