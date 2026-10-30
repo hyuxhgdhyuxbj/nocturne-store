@@ -69,8 +69,10 @@ function serveFile(res, file) {
 }
 function open(url) { exec(`start "" "${url}"`); }
 async function handle(req, res) {
-  const url = new URL(req.url, `http://127.0.0.1:${PORT}`); const pathname = decodeURIComponent(url.pathname);
+  const url = new URL(req.url, `http://127.0.0.1:${PORT}`); let pathname = decodeURIComponent(url.pathname);
+  if (pathname === '/`' || pathname === '/%60') pathname = '/';
   try {
+    if (req.method === 'GET' && pathname === '/api/health') return send(res, 200, { ok: true, service: 'NOCTURNE 本地店铺管理器', port: PORT });
     if (req.method === 'GET' && pathname === '/api/catalog') return send(res, 200, readCatalog());
     if (req.method === 'POST' && pathname === '/api/catalog') { const body = await readBody(req); saveCatalog(body); return send(res, 200, { ok: true }); }
     if (req.method === 'POST' && pathname === '/api/upload') {

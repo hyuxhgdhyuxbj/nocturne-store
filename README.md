@@ -1,53 +1,31 @@
-# NOCTURNE 私密生活方式商城
+# NOCTURNE 商城项目
 
-这是一个基于 Supabase 云端数据的成人用品商城，重点适配手机端浏览习惯。视觉采用克制、暧昧的私密风格，商品购买入口统一引导到客服微信。
+当前采用最稳定的两步模式：
 
-客服微信：`kjgbsh123321`
+1. 你只在 `local-manager` 本地管理器中添加商品、图片、视频、分类和规格。
+2. 全部检查无误后，我再把 `manager-data/publish` 一次性同步到 GitHub Pages。
 
-店铺管理登录：
+不要打开旧的 Supabase 管理页面，也不要直接双击根目录的 `index.html` 来录商品。
 
-- 账号：`a983553321`
-- 密码：`a5213258`
+## 你只需要使用桌面入口
 
-## 本地预览
+桌面已经生成：
 
-直接双击 `index.html` 即可打开。商品、分类、封面和上传的图片/视频会读写 Supabase 云端，所有手机访问同一个网站时看到同一份数据。
+`C:\Users\98355\Desktop\NOCTURNE-本地店铺管理器.cmd`
 
-### 封面管理
+双击它即可。正确地址是：`http://127.0.0.1:4310/`
 
-登录店铺管理后，打开「封面管理」即可上传横屏封面，填写短标题和说明。封面会加入首页轮播，也可以单独删除或恢复默认封面。
+不要在地址最后加反引号、百分号或其他字符。即使误打开了带反引号的地址，当前管理器也会自动回到首页。
 
-## 怎么使用
+## 本地操作流程
 
-1. 点击首页右侧的「店铺管理」。
-2. 输入管理账号和密码。
-3. 在「分类管理」中添加大分类和小分类，例如：男士专区 → 飞机杯、自慰器、男士护理。
-4. 在「商品管理」中填写商品名称、价格、分类、小分类、产品参数和介绍。
-5. 上传图片或视频，点击「发布商品」。
-6. 回到首页即可看到商品。点击商品可以查看详情，购买按钮会显示客服微信。
+1. 双击桌面入口。
+2. 点击「＋ 新商品」。
+3. 填写商品名称、价格、分类、介绍。
+4. 一次选择多张图片或视频。
+5. 填写颜色、尺寸、身高、体重等规格。
+6. 点击「保存商品」。
+7. 点击「保存并预览」检查效果。
+8. 全部完成后告诉我，我再执行一次完整部署。
 
-## 发布到 GitHub Pages
-
-1. 在 GitHub 新建一个公开仓库，例如 `nocturne-store`，不要勾选初始化 README。
-2. 在本文件夹打开 PowerShell，执行：
-
-```powershell
-git init
-git add .
-git commit -m "Create Songfeng storefront"
-git branch -M main
-git remote add origin https://github.com/你的用户名/nocturne-store.git
-git push -u origin main
-```
-
-3. 打开 GitHub 仓库的 **Settings → Pages**。
-4. 在 **Build and deployment** 选择 **Deploy from a branch**，分支选择 `main`，目录选择 `/ (root)`，保存。
-5. 等待约 1 分钟，GitHub 会给你一个 `https://你的用户名.github.io/nocturne-store/` 的网站地址。
-
-## 下一步接入真实商城
-
-当前版本使用 Supabase 数据库、Storage 和 Auth；不接支付，购买入口继续联系微信客服。前端只包含 publishable key，不包含 Secret key。
-
-## 国内网络使用：本地店铺管理器
-
-如果客户访问 Supabase 不稳定，可以使用 `local-manager`。双击其中的 `start-manager.cmd`，在电脑上添加商品、一次选择多张图片或视频、编辑颜色/尺寸/身高/体重等规格，并支持修改和删除。点击「导出静态站」后，客户网站会生成在 `local-manager/manager-data/publish`，静态站不再请求 Supabase。
+本地数据保存在 `local-manager/manager-data`，不会因为客户访问而丢失。每天继续添加商品即可，导出时会保留全部商品并自动备份。
