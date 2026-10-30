@@ -29,6 +29,14 @@
 local-manager/manager-data/publish
 ```
 
+每次点击「导出静态站」还会自动复制一份到桌面：
+
+```text
+桌面/NOCTURNE-publish
+```
+
+以后你只需要把桌面上的 `NOCTURNE-publish` 文件夹位置告诉我即可，不需要自己在项目文件夹里寻找。
+
 这个 `publish` 文件夹就是以后上传到 GitHub Pages 的客户网站文件。客户访问静态站时不需要 Supabase，也不需要 VPN。
 
 本地管理器只在你的电脑上使用，不再要求店铺登录。客户网站只显示商品、分类、图片、视频和客服微信，不包含管理入口。
