@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#351c27" />
+  <title>NOCTURNE · 私密生活方式商城</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./theme.css" />
+  <link rel="stylesheet" href="./mobile.css" />
+  <link rel="stylesheet" href="./carousel.css" />
+  <link rel="stylesheet" href="./cover-admin.css" />
+  <link rel="stylesheet" href="./admin-responsive.css" />
+  <link rel="stylesheet" href="./static-gallery.css" />
+</head>
+<body>
+  <div class="service-ticker">私密发货 · 包装不显示商品信息　|　客服微信 <button data-open-service>kjgbsh123321</button></div>
+  <header class="mobile-header"><a class="mobile-brand" href="#top"><span class="brand-mark">N</span><span><strong>NOCTURNE</strong><small>PRIVATE STORE</small></span></a><div class="mobile-actions"><button class="bag-button" data-open-cart>购物袋 <b data-cart-count>0</b></button></div></header>
+  <main id="top">
+    <section class="mobile-hero"><div><p class="eyebrow">NOCTURNE / 18+ PRIVATE STORE</p><h1>亲密，不必<br /><em>大声说出来。</em></h1><p>为独处、相爱和每一个想靠近的晚上，准备一些刚刚好的好物。</p><a class="hero-cta" href="#shop">进入私密精选 <span>↗</span></a></div><div class="hero-carousel"><div class="hero-slides" data-hero-slides></div><button class="hero-arrow prev" data-hero-prev aria-label="上一张">‹</button><button class="hero-arrow next" data-hero-next aria-label="下一张">›</button><div class="hero-dots" data-hero-dots></div></div></section>
+    <section class="shop-shell" id="shop"><div class="shop-title-row"><div><p class="eyebrow">PRIVATE EDIT</p><h2>今晚想看什么？</h2></div></div><div class="category-scroll" data-category-tabs></div><div class="subcategory-scroll" data-subcategory-tabs></div><div class="filter-row"><span data-product-count>0 件好物</span><label>排序 <select data-sort><option value="featured">精选</option><option value="price-low">价格低到高</option><option value="price-high">价格高到低</option></select></label></div><div class="product-grid" data-product-grid></div></section>
+    <section class="trust-strip"><div><strong>私密包装</strong><span>外箱不显示商品</span></div><div><strong>客服答疑</strong><span>微信一对一沟通</span></div><div><strong>18+ 专属</strong><span>尊重每一种选择</span></div></section>
+    <section class="brand-note"><p class="eyebrow">A LITTLE CLOSER</p><h2>让喜欢这件事，<em>自然一点。</em></h2><p>浏览、咨询和购买，都可以从一句“想了解一下”开始。</p><button class="outline-button" data-open-service>添加客服微信 <span>↗</span></button></section>
+  </main>
+  <footer class="mobile-footer"><span>© 2026 NOCTURNE</span><span>仅限成年人浏览</span><span>客服微信 <b data-footer-wechat>kjgbsh123321</b></span></footer>
+  <button class="service-float" data-open-service><span>♡</span><small>联系客服</small></button>
+  <div class="modal-backdrop" data-modal-backdrop hidden>
+    <section class="bottom-sheet" data-cart-sheet hidden><div class="sheet-head"><h2>购物袋 <span data-cart-count>0</span></h2><button class="close-button" data-close-modal>×</button></div><div class="cart-items" data-cart-items></div><div class="cart-total"><span>合计</span><strong data-cart-total>¥0</strong></div><button class="full-button" data-checkout>联系客服购买 <span>↗</span></button></section>
+    <section class="bottom-sheet service-sheet" data-service-sheet hidden><div class="sheet-head"><div><p class="eyebrow">PRIVATE SERVICE</p><h2>联系客服</h2></div><button class="close-button" data-close-modal>×</button></div><p class="service-big" data-service-wechat>kjgbsh123321</p><p class="sheet-muted">添加微信后，把商品名称或截图发给客服即可咨询。</p><button class="full-button" data-copy-wechat>复制客服微信</button></section>
+    <section class="bottom-sheet product-sheet" data-product-sheet hidden><div class="sheet-head"><div><p class="eyebrow">PRODUCT DETAILS</p><h2 data-detail-name>商品详情</h2></div><button class="close-button" data-close-modal>×</button></div><div class="detail-media static-detail-media" data-detail-media></div><div class="detail-price" data-detail-price></div><p class="sheet-muted" data-detail-description></p><div class="detail-specs" data-detail-specs></div><div class="detail-variants" data-detail-variants></div><button class="full-button" data-detail-contact>联系客服购买 <span>↗</span></button></section>
+  </div>
+  <div class="toast" data-toast></div>
+  <script src="./static-app.js"></script>
+</body>
+</html>
