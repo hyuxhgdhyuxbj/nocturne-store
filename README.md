@@ -47,3 +47,7 @@ git push -u origin main
 ## 下一步接入真实商城
 
 当前版本使用 Supabase 数据库、Storage 和 Auth；不接支付，购买入口继续联系微信客服。前端只包含 publishable key，不包含 Secret key。
+
+## 国内网络使用：本地店铺管理器
+
+如果客户访问 Supabase 不稳定，可以使用 `local-manager`。双击其中的 `start-manager.cmd`，在电脑上添加商品、一次选择多张图片或视频、编辑颜色/尺寸/身高/体重等规格，并支持修改和删除。点击「导出静态站」后，客户网站会生成在 `local-manager/manager-data/publish`，静态站不再请求 Supabase。
